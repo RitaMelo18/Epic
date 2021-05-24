@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">Epic</string>
+    <string name="app_name">TP2_CM</string>
+    <string name="BemVindo">Bem-vindo(a)!</string>
+    <string name="IniciarSessaotexto">Iniciar Sessão para continuar</string>
+    <string name="Email">Email</string>
+    <string name="PalavraPasse">Palavra-passe</string>
+    <string name="EsquecerPalavraPasse">Esqueceu-se da palavra-passe?</string>
+    <string name="IniciarSessao">Iniciar Sessão</string>
+    <string name="RegistarNovoUtilizador">Novo utilizador?</string>
+    <string name="Registar">Registar</string>
+    <string name="Classificacoes">Classificações</string>
+    <string name="Atividade">Atividade</string>
+    <string name="Saude">Saúde</string>
+    <string name="Servicos">Serviços</string>
 </resources>

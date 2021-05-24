@@ -1,7 +1,9 @@
 package ipvc.estg.epic
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,4 +13,10 @@ class MainActivity : AppCompatActivity() {
     //Teste
 
     //Teste dev
+
+    //Ir para a Página Inicial
+    fun IniciarSessao(view: View) {
+        var intent = Intent(this, Home::class.java)
+        startActivity(intent)
+    }
 }
