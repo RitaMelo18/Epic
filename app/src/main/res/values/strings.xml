@@ -19,4 +19,7 @@
     <string name="Asuaatividade">A sua atividade</string>
     <string name="Alterardados">Alterar dados</string>
     <string name="TerminarSessao">Terminar Sessão</string>
+    <string name="Sim">Sim</string>
+    <string name="Cancelar">Cancelar</string>
+    <string name="MensagemTerminarSessao">Esperamos ver-te em breve! Obrigado!</string>
 </resources>
