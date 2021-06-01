@@ -12,4 +12,11 @@
     <string name="Atividade">Atividade</string>
     <string name="Saude">Saúde</string>
     <string name="Servicos">Serviços</string>
+    <string name="Conta">Conta</string>
+    <string name="Nomeutilizador">Nome de utilizador</string>
+    <string name="Seguidores">Seguidores</string>
+    <string name="Aseguir">A seguir</string>
+    <string name="Asuaatividade">A sua atividade</string>
+    <string name="Alterardados">Alterar dados</string>
+    <string name="TerminarSessao">Terminar Sessão</string>
 </resources>

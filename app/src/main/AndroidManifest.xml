@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
-        <activity android:name=".Servicos"></activity>
+        <activity android:name=".Conta"></activity>
+        <activity android:name=".Servicos" />
         <activity android:name=".Saude" />
         <activity android:name=".Atividade" />
         <activity android:name=".Classificacoes" />
