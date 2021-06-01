@@ -22,4 +22,6 @@
     <string name="Sim">Sim</string>
     <string name="Cancelar">Cancelar</string>
     <string name="MensagemTerminarSessao">Esperamos ver-te em breve! Obrigado!</string>
+    <string name="conta" translatable="false">conta</string>
+    <string name="paginaRetornoConta">paginaRetornoConta</string>
 </resources>

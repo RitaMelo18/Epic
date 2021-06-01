@@ -1,6 +1,8 @@
 package ipvc.estg.epic
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -37,6 +39,14 @@ class Saude : AppCompatActivity() {
 
     //Ir para Conta
     fun Conta(view: View) {
+        val sharedPref: SharedPreferences = getSharedPreferences(
+            getString(R.string.conta), Context.MODE_PRIVATE
+        )
+        with(sharedPref.edit()){
+            putString(getString(R.string.paginaRetornoConta), "Saude")
+            commit()
+        }
+
         var intent = Intent(this, Conta::class.java)
         startActivity(intent)
     }

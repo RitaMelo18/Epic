@@ -7,18 +7,20 @@
     android:background="@color/white"
     tools:context=".Home">
 
+
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView16"
         android:layout_width="42dp"
         android:layout_height="42dp"
-        android:background="@drawable/rounded_button"
+        android:layout_marginTop="16dp"
+        android:onClick="Conta"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.029"
-        tools:srcCompat="@drawable/ic_baseline_account_circle_24" />
+        app:layout_constraintVertical_bias="0.005"
+        app:srcCompat="@drawable/ic_baseline_account_circle_24" />
 
     <SearchView
         android:id="@+id/searchView"

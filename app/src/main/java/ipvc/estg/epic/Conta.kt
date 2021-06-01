@@ -1,11 +1,13 @@
 package ipvc.estg.epic
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import android.content.DialogInterface
+import android.content.SharedPreferences
 
 class Conta : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,8 +17,53 @@ class Conta : AppCompatActivity() {
 
     //Voltar para o Feed
     fun VoltarFeed(view: View) {
-        var intent = Intent(this, Home::class.java)
-        startActivity(intent)
+
+        val sharedPref: SharedPreferences = getSharedPreferences(
+            getString(R.string.conta), Context.MODE_PRIVATE
+        )
+
+        if((sharedPref.all[getString(R.string.paginaRetornoConta)])?.equals("Home") == true){
+            var intent = Intent(this, Home::class.java)
+            startActivity(intent)
+            with(sharedPref.edit()){
+                putString(getString(R.string.paginaRetornoConta), "")
+                commit()
+            }
+        }
+        if((sharedPref.all[getString(R.string.paginaRetornoConta)])?.equals("Classificacoes") == true){
+            var intent = Intent(this, Classificacoes::class.java)
+            startActivity(intent)
+            with(sharedPref.edit()){
+                putString(getString(R.string.paginaRetornoConta), "")
+                commit()
+            }
+        }
+        if((sharedPref.all[getString(R.string.paginaRetornoConta)])?.equals("Atividade") == true){
+            var intent = Intent(this, Atividade::class.java)
+            startActivity(intent)
+            with(sharedPref.edit()){
+                putString(getString(R.string.paginaRetornoConta), "")
+                commit()
+            }
+        }
+        if((sharedPref.all[getString(R.string.paginaRetornoConta)])?.equals("Saude") == true){
+            var intent = Intent(this, Saude::class.java)
+            startActivity(intent)
+            with(sharedPref.edit()){
+                putString(getString(R.string.paginaRetornoConta), "")
+                commit()
+            }
+        }
+        if((sharedPref.all[getString(R.string.paginaRetornoConta)])?.equals("Servicos") == true){
+            var intent = Intent(this, Servicos::class.java)
+            startActivity(intent)
+            with(sharedPref.edit()){
+                putString(getString(R.string.paginaRetornoConta), "")
+                commit()
+            }
+        }
+
+
     }
 
     //Terminar Sessão
@@ -37,6 +84,7 @@ class Conta : AppCompatActivity() {
             }*/
             var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+
         }
 
         builder.setNegativeButton(R.string.Cancelar) { dialog: DialogInterface?, which: Int ->}
