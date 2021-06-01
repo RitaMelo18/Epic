@@ -7,19 +7,6 @@
     android:background="@color/white"
     tools:context=".Classificacoes">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:background="@drawable/rounded_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.084"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.029"
-        tools:srcCompat="@drawable/ic_baseline_account_circle_24" />
-
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="42dp"
@@ -33,6 +20,20 @@
         app:layout_constraintVertical_bias="0.028"
         app:srcCompat="@drawable/ic_baseline_question_answer_24"
         tools:ignore="VectorDrawableCompat" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:onClick="Conta"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintHorizontal_bias="0.313"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.136"
+        app:srcCompat="@drawable/ic_baseline_account_circle_24" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -49,14 +50,17 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/roboto"
         android:text="@string/Classificacoes"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.584" />
 
     <RelativeLayout
         android:layout_width="350dp"
@@ -100,9 +104,9 @@
             android:layout_marginEnd="154dp"
             android:layout_marginRight="154dp"
             android:layout_marginBottom="8dp"
+            android:onClick="Home"
             app:srcCompat="@drawable/ic_baseline_home_24_grey"
-            tools:ignore="VectorDrawableCompat"
-            android:onClick="Home"/>
+            tools:ignore="VectorDrawableCompat" />
 
         <ImageView
             android:id="@+id/imageView9"
@@ -116,9 +120,9 @@
             android:layout_marginEnd="-65dp"
             android:layout_marginRight="-65dp"
             android:layout_marginBottom="9dp"
+            android:onClick="Servicos"
             app:srcCompat="@drawable/ic_baseline_storefront_24_grey"
-            tools:ignore="VectorDrawableCompat"
-            android:onClick="Servicos"/>
+            tools:ignore="VectorDrawableCompat" />
 
         <ImageView
             android:id="@+id/imageView7"
@@ -132,9 +136,9 @@
             android:layout_marginBottom="9dp"
             android:layout_toStartOf="@+id/imageView6"
             android:layout_toLeftOf="@+id/imageView6"
+            android:onClick="Atividade"
             app:srcCompat="@drawable/ic_baseline_directions_run_24_grey"
-            tools:ignore="VectorDrawableCompat"
-            android:onClick="Atividade"/>
+            tools:ignore="VectorDrawableCompat" />
 
         <ImageView
             android:id="@+id/imageView8"
@@ -148,9 +152,9 @@
             android:layout_marginEnd="-68dp"
             android:layout_marginRight="-68dp"
             android:layout_marginBottom="9dp"
+            android:onClick="Saude"
             app:srcCompat="@drawable/ic_baseline_medical_services_24_grey"
-            tools:ignore="VectorDrawableCompat"
-            android:onClick="Saude"/>
+            tools:ignore="VectorDrawableCompat" />
 
     </RelativeLayout>
 

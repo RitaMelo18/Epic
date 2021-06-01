@@ -34,4 +34,10 @@ class Atividade : AppCompatActivity() {
         var intent = Intent(this, Saude::class.java)
         startActivity(intent)
     }
+
+    //Ir para Conta
+    fun Conta(view: View) {
+        var intent = Intent(this, Conta::class.java)
+        startActivity(intent)
+    }
 }
