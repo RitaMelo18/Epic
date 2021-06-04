@@ -11,6 +11,7 @@ import android.content.SharedPreferences
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.graphics.drawable.toDrawable
 import com.squareup.picasso.Picasso
 
 class Conta : AppCompatActivity() {
@@ -28,8 +29,10 @@ class Conta : AppCompatActivity() {
             val imagem = findViewById<ImageView>(R.id.imageView10)
             val foto = sharedPref.getString(getString(R.string.fotoUser), "0")
             Picasso.get().load(foto).into(imagem)
-            imagem.getLayoutParams().height = 300; // ajudtar tamanho da iamgem
-            imagem.getLayoutParams().width = 300;
+            imagem.getLayoutParams().height = 400; // ajudtar tamanho da iamgem
+            imagem.getLayoutParams().width = 400;
+
+
             imagem.requestLayout();
 
         }
