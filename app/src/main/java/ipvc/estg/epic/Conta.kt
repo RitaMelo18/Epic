@@ -25,6 +25,13 @@ class Conta : AppCompatActivity() {
             val iduser = sharedPref.getString(getString(R.string.nomeUser), "0")
             findViewById<TextView>(R.id.textView7).setText(""+iduser)
 
+            val imagem = findViewById<ImageView>(R.id.imageView10)
+            val foto = sharedPref.getString(getString(R.string.fotoUser), "0")
+            Picasso.get().load(foto).into(imagem)
+            imagem.getLayoutParams().height = 300; // ajudtar tamanho da iamgem
+            imagem.getLayoutParams().width = 300;
+            imagem.requestLayout();
+
         }
         
     }
