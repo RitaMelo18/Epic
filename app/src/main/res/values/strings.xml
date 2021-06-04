@@ -24,4 +24,14 @@
     <string name="MensagemTerminarSessao">Esperamos ver-te em breve! Obrigado!</string>
     <string name="conta" translatable="false">conta</string>
     <string name="paginaRetornoConta">paginaRetornoConta</string>
+
+    <string name="preference_login" translatable="false">LoginSharedPreferences</string>
+    <string name="Login_Email">Insira um email</string>
+    <string name="Login_Password">Insira a palavra-passe</string>
+    <string name="Error_login">Dados incorretos</string>
+
+    <string name="nomeUser" translatable="false">nomeshared</string>
+    <string name="LoginShared" translatable="false">loginshared</string>
+    <string name="fotoUser" translatable="false">fotoshared</string>
+    <string name="Id_LoginUser" translatable="false">idloginuser</string>
 </resources>

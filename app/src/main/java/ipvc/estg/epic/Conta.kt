@@ -8,11 +8,25 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import android.content.DialogInterface
 import android.content.SharedPreferences
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
+import com.squareup.picasso.Picasso
 
 class Conta : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_conta)
+
+        val sharedPref: SharedPreferences = getSharedPreferences(
+            getString(R.string.preference_login), Context.MODE_PRIVATE
+        )
+        if (sharedPref != null){
+            val iduser = sharedPref.getString(getString(R.string.nomeUser), "0")
+            findViewById<TextView>(R.id.textView7).setText(""+iduser)
+
+        }
+        
     }
 
     //Voltar para o Feed
@@ -74,14 +88,16 @@ class Conta : AppCompatActivity() {
         builder.setIcon(R.drawable.logo)
         builder.setPositiveButton(R.string.Sim) { dialog: DialogInterface?, which: Int ->
             //Fab
-            /*val sharedPref: SharedPreferences = getSharedPreferences(
+            val sharedPref: SharedPreferences = getSharedPreferences(
                 getString(R.string.preference_login), Context.MODE_PRIVATE
             )
             with(sharedPref.edit()){
                 putBoolean(getString(R.string.LoginShared), false)
-                putString(getString(R.string.EmailShared), "")
+                putString(getString(R.string.nomeUser), "")
+                putString(getString(R.string.fotoUser), "")
+                putString(getString(R.string.Id_LoginUser), "")
                 commit()
-            }*/
+            }
             var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
 
