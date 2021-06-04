@@ -29,7 +29,7 @@ class Conta : AppCompatActivity() {
             val imagem = findViewById<ImageView>(R.id.imageView10)
             val foto = sharedPref.getString(getString(R.string.fotoUser), "0")
             Picasso.get().load(foto).into(imagem)
-            imagem.getLayoutParams().height = 400; // ajudtar tamanho da iamgem
+            imagem.getLayoutParams().height = 400;
             imagem.getLayoutParams().width = 400;
 
 

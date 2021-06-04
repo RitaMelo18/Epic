@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/ic_baseline_question_answer_24"
         tools:ignore="VectorDrawableCompat" />
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageView16"
         android:layout_width="42dp"
         android:layout_height="42dp"
