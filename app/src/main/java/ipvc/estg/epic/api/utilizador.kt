@@ -5,5 +5,6 @@ data class utilizador (
     val email: String,
     val password: String,
     val nome: String,
-    val foto_perfil: String
+    val foto_perfil: String,
+    val peso: Float
 )

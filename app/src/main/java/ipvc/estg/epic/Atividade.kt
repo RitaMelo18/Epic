@@ -21,6 +21,12 @@ import java.util.concurrent.TimeUnit
 
 import android.widget.ImageView
 import com.squareup.picasso.Picasso
+import ipvc.estg.epic.api.EndPoints
+import ipvc.estg.epic.api.ServiceBuilder
+import ipvc.estg.epic.api.utilizador
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Atividade : AppCompatActivity(), SensorEventListener {
 
@@ -37,10 +43,22 @@ class Atividade : AppCompatActivity(), SensorEventListener {
     private var cronometro: Chronometer? = null
 
     private var passosTotais = 0
+    private var mets = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_atividade)
+
+
+
+        cronometro = this.findViewById<Chronometer>(R.id.simpleChronometer)
+        sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+        passos = this.findViewById<TextView>(R.id.passos)
+        distancia = this.findViewById<TextView>(R.id.distancia)
+        velocidade_media = this.findViewById<TextView>(R.id.velocidade_media)
+        calorias = this.findViewById<TextView>(R.id.calorias)
+
+        var id_utl : Any? = 0
 
         val sharedPref: SharedPreferences = getSharedPreferences(
             getString(R.string.preference_login), Context.MODE_PRIVATE
@@ -48,21 +66,35 @@ class Atividade : AppCompatActivity(), SensorEventListener {
         if (sharedPref != null) {
             val imagem = findViewById<ImageView>(R.id.imageView16)
             val foto = sharedPref.getString(getString(R.string.fotoUser), "0")
+            id_utl = sharedPref.all[getString(R.string.Id_LoginUser)]
+
             Picasso.get().load(foto).into(imagem)
             imagem.getLayoutParams().height = 120;
             imagem.getLayoutParams().width = 120;
 
-
             imagem.requestLayout();
         }
 
+        val request = ServiceBuilder.buildService(EndPoints::class.java)
+        val call = request.getUtlAll(id_utl as Int)
+
+        call.enqueue(object : Callback<utilizador> {
+            override fun onResponse(call: Call<utilizador>, response: Response<utilizador>) {
+                if (response.isSuccessful){
+                    val e: utilizador = response.body()!!
+                    mets = (42 * e.peso.toInt())*0.005   // mets - variavel necessaria apra calcular as calorias
+                    Log.d("TAG**", "mets: "+mets)
+                }
+            }
+
+            override fun onFailure(call: Call<utilizador>, t: Throwable) {
+                /* Toast.makeText(this@MainActivity, "${t.message}", Toast.LENGTH_SHORT).show()*/
+            }
+        })
+
+
         resetPassos()
-        cronometro = this.findViewById<Chronometer>(R.id.simpleChronometer)
-        sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
-        passos = this.findViewById<TextView>(R.id.passos)
-        distancia = this.findViewById<TextView>(R.id.distancia)
-        velocidade_media = this.findViewById<TextView>(R.id.velocidade_media)
-        calorias = this.findViewById<TextView>(R.id.calorias)
+
     }
 
     //Ir para as Classificações
@@ -146,9 +178,11 @@ class Atividade : AppCompatActivity(), SensorEventListener {
             var km = passosTotais * 0.00047
             var milisegundos = SystemClock.elapsedRealtime()-cronometro!!.base
             var segundos = milisegundos/1000
+            var minutos = segundos * 0.01667
             var horas = segundos * 0.000277
             var velocidade_m = km * (1/horas.toFloat())
-            //Log.d("TAG**", "Mili: " + milisegundos.toString() + " Horas: " + velocidade_m)
+            var cal = minutos * mets
+            Log.d("TAG**", "Minutos: " + minutos + " mets: " + mets + " Calorias: " + cal)
 
             if(previousTotalSteps != 0f){
                 passosTotais += currentSteps
@@ -158,9 +192,12 @@ class Atividade : AppCompatActivity(), SensorEventListener {
             previousTotalSteps = totalSteps
 
             passos?.text  = ("$passosTotais")
+
             distancia?.text = String.format("%.2f", km)
 
             velocidade_media?.text = String.format("%.1f", velocidade_m)    // Vmedia = delta dist / destal tempo  => converter para km e para horas
+
+            calorias?.text = String.format("%.2f", cal)
         }
     }
 
