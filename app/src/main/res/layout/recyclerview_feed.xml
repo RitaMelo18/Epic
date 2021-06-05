@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
+    android:outlineSpotShadowColor="@color/colorPrimary"
+    app:cardCornerRadius="20dp"
+    android:id="@+id/note"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:id="@+id/fotoUtilizadorAmigo"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+        <TextView
+            android:id="@+id/NomeUtilizador"
+            android:layout_width="150dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="13sp"
+            android:textColor="#000000"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/DataAtividade"
+            android:layout_width="152dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:padding="1dp"
+            android:textColor="#978F8F"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="11sp"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/Conteudo"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_weight="248"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/HoraAtividade"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginLeft="52dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="#978F8F"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/DescricaoAtividade"
+            android:layout_width="373dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="#978F8F"
+            android:textSize="11sp" />
+
+        <ImageView
+            android:id="@+id/imagemAtividadeMapa"
+            android:layout_width="199dp"
+            android:layout_height="133dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            >
+
+        </ImageView>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/DadosAtividadeDistancia"
+        android:layout_width="161dp"
+        android:layout_height="38dp"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="165dp"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="#978F8F"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/DadosAtividadePassos"
+        android:layout_width="161dp"
+        android:layout_height="38dp"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="203dp"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="#978F8F"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/DadosAtividadeTempo"
+        android:layout_width="161dp"
+        android:layout_height="38dp"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="241dp"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="#978F8F"
+        android:textSize="11sp" />
+
+
+</androidx.cardview.widget.CardView >
+
