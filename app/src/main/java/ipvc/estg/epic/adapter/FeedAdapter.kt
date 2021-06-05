@@ -42,7 +42,7 @@ class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         DadosAtividadeDistancia.text = "Distância: " + postModel.distancia.toString() + " Km"
         DadosAtividadePassos.text = "Passos: " +postModel.passos.toString()
         DadosAtividadeTempo.text = "Tempo: " +postModel.tempo.toString() + " min"
-
+        Picasso.get().load(postModel.imagem_mapa).into(imagemAtividadeMapa)
 
     }
 
