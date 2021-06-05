@@ -27,22 +27,22 @@ class PostAdapter (val postModel: MutableList<feed>): RecyclerView.Adapter<PostV
 }
 
 class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-    //private val fotoUtilizadorAmigo: TextView = itemView.findViewById(R.id.fotoUtilizadorAmigo)
+    private val fotoUtilizadorAmigo: ImageView = itemView.findViewById(R.id.fotoUtilizadorAmigo)
+    private val NomeUtilizador: TextView = itemView.findViewById(R.id.NomeUtilizador)
     private val DataHoraAtividade: TextView = itemView.findViewById(R.id.DataHoraAtividade)
-    private val DescricaoAtividade: TextView = itemView.findViewById(R.id.DescricaoAtividade)
     private val DadosAtividadeDistancia: TextView = itemView.findViewById(R.id.DadosAtividadeDistancia)
     private val DadosAtividadePassos: TextView = itemView.findViewById(R.id.DadosAtividadePassos)
     private val DadosAtividadeTempo: TextView = itemView.findViewById(R.id.DadosAtividadeTempo)
     private val imagemAtividadeMapa: ImageView = itemView.findViewById(R.id.imagemAtividadeMapa)
 
     fun bindView(postModel: feed){
-        //fotoUtilizadorAmigo.text = postModel.id.toString()
+        Picasso.get().load(postModel.foto_utilizador).into(fotoUtilizadorAmigo)
+        NomeUtilizador.text = postModel.nome
         DataHoraAtividade.text = postModel.data_fim
-        DescricaoAtividade.text = postModel.utilizador_id.toString()
-        DadosAtividadeDistancia.text = "Distância: " + postModel.distancia.toString()
+        DadosAtividadeDistancia.text = "Distância: " + postModel.distancia.toString() + " Km"
         DadosAtividadePassos.text = "Passos: " +postModel.passos.toString()
-        DadosAtividadeTempo.text = "Tempo: " +postModel.tempo.toString()
-        //Picasso.get().load(postModel.imagem_mapa).into(imagemAtividadeMapa)
+        DadosAtividadeTempo.text = "Tempo: " +postModel.tempo.toString() + " min"
+
 
     }
 

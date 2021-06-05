@@ -10,5 +10,7 @@ data class feed (
     val data_fim: String? =null,
     val tempo: Int? =null,
     val velocidade_media: Int? =null,
-    val imagem_mapa: String? =null
+    val imagem_mapa: String? =null,
+    val foto_utilizador: String ?= null,
+    val nome: String ?= null
 )

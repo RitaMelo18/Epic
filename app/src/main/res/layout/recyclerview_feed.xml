@@ -18,7 +18,7 @@
         android:background="@android:color/white"
         android:orientation="horizontal"
         >
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/fotoUtilizadorAmigo"
             android:layout_width="42dp"
             android:layout_height="42dp"
@@ -28,7 +28,7 @@
 
         <TextView
             android:id="@+id/NomeUtilizador"
-            android:layout_width="150dp"
+            android:layout_width="130dp"
             android:layout_height="38dp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
@@ -39,10 +39,10 @@
 
         <TextView
             android:id="@+id/DataHoraAtividade"
-            android:layout_width="151dp"
+            android:layout_width="165dp"
             android:layout_height="38dp"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="5dp"
             android:padding="1dp"
             android:textColor="#978F8F"
             android:fontFamily="@font/roboto_bold"
@@ -55,27 +55,16 @@
     <LinearLayout
         android:id="@+id/Conteudo"
         android:layout_width="match_parent"
-        android:layout_height="270dp"
+        android:layout_height="240dp"
         android:layout_weight="248"
         android:orientation="vertical">
-
-
-        <TextView
-            android:id="@+id/DescricaoAtividade"
-            android:layout_width="360dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="70dp"
-            android:fontFamily="@font/roboto_bold"
-            android:textColor="#978F8F"
-            android:textSize="11sp" />
 
         <ImageView
             android:id="@+id/imagemAtividadeMapa"
             android:layout_width="199dp"
             android:layout_height="129dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="90dp">
 
         </ImageView>
 
@@ -87,7 +76,7 @@
         android:layout_width="161dp"
         android:layout_height="40dp"
         android:layout_marginLeft="220dp"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="90dp"
         android:fontFamily="@font/roboto_bold"
         android:textColor="#978F8F"
         android:textSize="11sp" />
@@ -97,7 +86,7 @@
         android:layout_width="161dp"
         android:layout_height="40dp"
         android:layout_marginLeft="220dp"
-        android:layout_marginTop="174dp"
+        android:layout_marginTop="134dp"
         android:fontFamily="@font/roboto_bold"
         android:textColor="#978F8F"
         android:textSize="11sp" />
@@ -107,7 +96,7 @@
         android:layout_width="161dp"
         android:layout_height="40dp"
         android:layout_marginLeft="220dp"
-        android:layout_marginTop="218dp"
+        android:layout_marginTop="178dp"
         android:fontFamily="@font/roboto_bold"
         android:textColor="#978F8F"
         android:textSize="11sp" />
