@@ -30,18 +30,19 @@
             android:id="@+id/NomeUtilizador"
             android:layout_width="150dp"
             android:layout_height="38dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
             android:fontFamily="@font/roboto_bold"
             android:textSize="13sp"
             android:textColor="#000000"
             android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/DataAtividade"
-            android:layout_width="152dp"
+            android:id="@+id/DataHoraAtividade"
+            android:layout_width="151dp"
             android:layout_height="38dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
             android:padding="1dp"
             android:textColor="#978F8F"
             android:fontFamily="@font/roboto_bold"
@@ -54,27 +55,17 @@
     <LinearLayout
         android:id="@+id/Conteudo"
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="270dp"
         android:layout_weight="248"
         android:orientation="vertical">
 
 
         <TextView
-            android:id="@+id/HoraAtividade"
-            android:layout_width="100dp"
-            android:layout_height="38dp"
-            android:layout_marginTop="56dp"
-            android:layout_marginLeft="52dp"
-            android:fontFamily="@font/roboto_bold"
-            android:textColor="#978F8F"
-            android:textSize="11sp" />
-
-        <TextView
             android:id="@+id/DescricaoAtividade"
-            android:layout_width="373dp"
+            android:layout_width="360dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="70dp"
             android:fontFamily="@font/roboto_bold"
             android:textColor="#978F8F"
             android:textSize="11sp" />
@@ -82,10 +73,9 @@
         <ImageView
             android:id="@+id/imagemAtividadeMapa"
             android:layout_width="199dp"
-            android:layout_height="133dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            >
+            android:layout_height="129dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp">
 
         </ImageView>
 
@@ -95,9 +85,9 @@
     <TextView
         android:id="@+id/DadosAtividadeDistancia"
         android:layout_width="161dp"
-        android:layout_height="38dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="220dp"
-        android:layout_marginTop="165dp"
+        android:layout_marginTop="130dp"
         android:fontFamily="@font/roboto_bold"
         android:textColor="#978F8F"
         android:textSize="11sp" />
@@ -105,9 +95,9 @@
     <TextView
         android:id="@+id/DadosAtividadePassos"
         android:layout_width="161dp"
-        android:layout_height="38dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="220dp"
-        android:layout_marginTop="203dp"
+        android:layout_marginTop="174dp"
         android:fontFamily="@font/roboto_bold"
         android:textColor="#978F8F"
         android:textSize="11sp" />
@@ -115,9 +105,9 @@
     <TextView
         android:id="@+id/DadosAtividadeTempo"
         android:layout_width="161dp"
-        android:layout_height="38dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="220dp"
-        android:layout_marginTop="241dp"
+        android:layout_marginTop="218dp"
         android:fontFamily="@font/roboto_bold"
         android:textColor="#978F8F"
         android:textSize="11sp" />

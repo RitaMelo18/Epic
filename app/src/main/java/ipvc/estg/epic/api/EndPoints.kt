@@ -9,4 +9,7 @@ interface EndPoints {
     @POST("/myslim2/api/utilizador")
     fun postTest(@Field("email") first: String): Call<utilizador>
 
+    @GET("/myslim2/api/atividade")
+    fun getAtividade(): Call<MutableList<feed>>
+
 }
