@@ -24,4 +24,5 @@
     <string name="MensagemTerminarSessao">Esperamos ver-te em breve! Obrigado!</string>
     <string name="conta" translatable="false">conta</string>
     <string name="paginaRetornoConta">paginaRetornoConta</string>
+    <string name="Iniciar_atividade">Iniciar Atividade</string>
 </resources>
