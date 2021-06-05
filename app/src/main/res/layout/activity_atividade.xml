@@ -62,7 +62,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.584" />
 
+    <Chronometer
+        android:id="@+id/simpleChronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="75dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="350dp"
         android:layout_height="58dp"
         android:background="@drawable/rounded_rectangule"
@@ -85,9 +96,9 @@
             android:layout_marginEnd="70dp"
             android:layout_marginRight="70dp"
             android:layout_marginBottom="8dp"
+            android:onClick="Classificacoes"
             app:srcCompat="@drawable/ic_baseline_emoji_events_24_grey"
-            tools:ignore="VectorDrawableCompat"
-            android:onClick="Classificacoes"/>
+            tools:ignore="VectorDrawableCompat" />
 
         <ImageView
             android:id="@+id/imageView5"
@@ -105,9 +116,9 @@
             android:layout_marginEnd="154dp"
             android:layout_marginRight="154dp"
             android:layout_marginBottom="8dp"
+            android:onClick="Home"
             app:srcCompat="@drawable/ic_baseline_home_24_grey"
-            tools:ignore="VectorDrawableCompat"
-            android:onClick="Home"/>
+            tools:ignore="VectorDrawableCompat" />
 
         <ImageView
             android:id="@+id/imageView9"
@@ -121,9 +132,9 @@
             android:layout_marginEnd="-65dp"
             android:layout_marginRight="-65dp"
             android:layout_marginBottom="9dp"
+            android:onClick="Servicos"
             app:srcCompat="@drawable/ic_baseline_storefront_24_grey"
-            tools:ignore="VectorDrawableCompat"
-            android:onClick="Servicos"/>
+            tools:ignore="VectorDrawableCompat" />
 
         <ImageView
             android:id="@+id/imageView7"
@@ -152,11 +163,67 @@
             android:layout_marginEnd="-68dp"
             android:layout_marginRight="-68dp"
             android:layout_marginBottom="9dp"
+            android:onClick="Saude"
             app:srcCompat="@drawable/ic_baseline_medical_services_24_grey"
-            tools:ignore="VectorDrawableCompat"
-            android:onClick="Saude"/>
+            tools:ignore="VectorDrawableCompat" />
 
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:onClick="iniciar_atividade"
+        android:text="@string/Iniciar_atividade"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/passos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="170dp"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/distancia"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/distancia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="75dp"
+        android:text="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/simpleChronometer" />
+
+    <TextView
+        android:id="@+id/velocidade_media"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="125dp"
+        android:text="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/distancia" />
+
+    <TextView
+        android:id="@+id/calorias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="125dp"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/velocidade_media"
+        app:layout_constraintTop_toBottomOf="@+id/passos" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
