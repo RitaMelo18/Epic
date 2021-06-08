@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1045798754766",
+    "project_id": "kotlinmessenger-5a2fb",
+    "storage_bucket": "kotlinmessenger-5a2fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1045798754766:android:16b1a6c51448a23e82f39f",
+        "android_client_info": {
+          "package_name": "ipvc.estg.epic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1045798754766-9l2ldvkht8pef89hpunj95280st0a61b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3NWVzY7i1Z467ZSYm84TOtwt8jaDQqAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1045798754766-9l2ldvkht8pef89hpunj95280st0a61b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
