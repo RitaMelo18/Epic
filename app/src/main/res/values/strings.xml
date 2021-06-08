@@ -35,4 +35,10 @@
     <string name="fotoUser" translatable="false">fotoshared</string>
     <string name="Id_LoginUser" translatable="false">idloginuser</string>
     <string name="Iniciar_atividade">Iniciar Atividade</string>
+    <string name="BPM">       BPM</string>
+    <string name="Pesoideal">PESO IDEAL</string>
+    <string name="BPM0">--</string>
+    <string name="Homem">Homem</string>
+    <string name="Mulher">Mulher</string>
+    <string name="IMC">IMC</string>
 </resources>
