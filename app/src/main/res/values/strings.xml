@@ -34,4 +34,5 @@
     <string name="LoginShared" translatable="false">loginshared</string>
     <string name="fotoUser" translatable="false">fotoshared</string>
     <string name="Id_LoginUser" translatable="false">idloginuser</string>
+    <string name="Iniciar_atividade">Iniciar Atividade</string>
 </resources>
