@@ -12,4 +12,8 @@ interface EndPoints {
     @GET("/myslim2/api/atividade")
     fun getAtividade(): Call<MutableList<feed>>
 
+    @FormUrlEncoded
+    @POST("/myslim2/api/saudeUtl")
+    fun postDadosSaude(@Field("id") first: Int): Call<saude>
+
 }

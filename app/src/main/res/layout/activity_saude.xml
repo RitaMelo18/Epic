@@ -7,6 +7,20 @@
     android:background="@color/white"
     tools:context=".Saude">
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageView16"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:onClick="Conta"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintHorizontal_bias="0.313"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.136"
+        app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
     <TextView
         android:id="@+id/Idade"
         android:layout_width="142dp"
@@ -32,7 +46,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView15"
         app:layout_constraintEnd_toEndOf="@+id/textView15"
         app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="@+id/textView15" />
+        app:layout_constraintStart_toStartOf="@+id/textView15"
+        android:visibility="invisible"/>
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -47,20 +62,6 @@
         app:layout_constraintVertical_bias="0.028"
         app:srcCompat="@drawable/ic_baseline_question_answer_24"
         tools:ignore="VectorDrawableCompat" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imageView16"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="16dp"
-        android:onClick="Conta"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/textView6"
-        app:layout_constraintHorizontal_bias="0.313"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.136"
-        app:srcCompat="@drawable/ic_baseline_account_circle_24" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -84,7 +85,6 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.584" />
@@ -196,7 +196,7 @@
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
@@ -302,50 +302,37 @@
         app:layout_constraintStart_toStartOf="@+id/textView14"
         app:srcCompat="@drawable/ic_baseline_favorite_24" />
 
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="137dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/roboto_bold"
-        android:text="TextView"
-        android:textColor="#000000"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView16"
-        app:layout_constraintEnd_toEndOf="@+id/textView16"
-        app:layout_constraintHorizontal_bias="0.518"
-        app:layout_constraintStart_toStartOf="@+id/textView16" />
 
     <TextView
         android:id="@+id/textView21"
-        android:layout_width="110dp"
+        android:layout_width="119dp"
         android:layout_height="28dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/Pesoideal"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/textView16"
-        app:layout_constraintHorizontal_bias="0.259"
+        app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="@+id/textView16"
         app:layout_constraintTop_toTopOf="@+id/textView16" />
 
     <TextView
         android:id="@+id/Peso_ideal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_width="119dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/roboto_bold"
         android:text="TextView"
         android:textColor="#000000"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView16"
         app:layout_constraintEnd_toEndOf="@+id/textView16"
-        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="@+id/textView16" />
 
     <TextView
-        android:id="@+id/textView24"
+        android:id="@+id/AlturaRecebida"
         android:layout_width="142dp"
         android:layout_height="30dp"
         android:layout_marginBottom="112dp"
@@ -366,7 +353,8 @@
         app:layout_constraintEnd_toEndOf="@+id/textView15"
         app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="@+id/textView15"
-        app:srcCompat="@drawable/outline_female_black_36dp" />
+        app:srcCompat="@drawable/outline_female_black_36dp"
+        android:visibility="invisible"/>
 
     <ImageView
         android:id="@+id/Masculino"
@@ -377,7 +365,8 @@
         app:layout_constraintEnd_toEndOf="@+id/textView15"
         app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="@+id/textView15"
-        app:srcCompat="@drawable/outline_male_black_36dp" />
+        app:srcCompat="@drawable/outline_male_black_36dp"
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/Homem"
@@ -391,7 +380,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView15"
         app:layout_constraintEnd_toEndOf="@+id/textView15"
         app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="@+id/textView15" />
+        app:layout_constraintStart_toStartOf="@+id/textView15"
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/textView27"
@@ -412,8 +402,53 @@
         android:layout_height="199dp"
         app:layout_constraintBottom_toBottomOf="@+id/textView17"
         app:layout_constraintEnd_toEndOf="@+id/textView17"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="@+id/textView17"
         app:srcCompat="@drawable/imcgrafico" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/abaixoPeso"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="96dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView17"
+        app:layout_constraintEnd_toEndOf="@+id/imageView19"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="@+id/imageView19"
+        app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/PesoNormal"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="88dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView17"
+        app:layout_constraintEnd_toEndOf="@+id/imageView19"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="@+id/imageView19"
+        app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/AcimaPeso"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="88dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView17"
+        app:layout_constraintEnd_toEndOf="@+id/imageView19"
+        app:layout_constraintHorizontal_bias="0.577"
+        app:layout_constraintStart_toStartOf="@+id/imageView19"
+        app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ExcessoPeso"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView17"
+        app:layout_constraintEnd_toEndOf="@+id/imageView19"
+        app:layout_constraintHorizontal_bias="0.692"
+        app:layout_constraintStart_toStartOf="@+id/imageView19"
+        app:srcCompat="@drawable/ic_baseline_account_circle_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
