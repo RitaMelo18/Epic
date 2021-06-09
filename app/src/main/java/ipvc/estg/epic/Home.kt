@@ -7,10 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.EditText
 import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
@@ -18,7 +15,6 @@ import ipvc.estg.epic.adapter.PostAdapter
 import ipvc.estg.epic.api.EndPoints
 import ipvc.estg.epic.api.ServiceBuilder
 import ipvc.estg.epic.api.feed
-import ipvc.estg.epic.api.utilizador
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -114,6 +110,12 @@ class Home : AppCompatActivity() {
         }
 
         var intent = Intent(this, Conta::class.java)
+        startActivity(intent)
+    }
+
+    //Ir para o Chat
+    fun Chat(view: View) {
+        var intent = Intent(this, Chat::class.java)
         startActivity(intent)
     }
 }

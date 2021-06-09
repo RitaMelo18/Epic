@@ -1,5 +1,6 @@
 package ipvc.estg.epic
 
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -9,6 +10,10 @@ import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidUserException
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import ipvc.estg.epic.api.EndPoints
 import ipvc.estg.epic.api.ServiceBuilder
 import ipvc.estg.epic.api.utilizador
@@ -17,10 +22,12 @@ import retrofit2.Call
 import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        auth = Firebase.auth
         val sharedPref: SharedPreferences = getSharedPreferences(
             getString(R.string.preference_login), Context.MODE_PRIVATE
         )
@@ -34,6 +41,7 @@ class MainActivity : AppCompatActivity() {
                 //Log.d("****SHARED", "${R.string.nomeUser}")
             }
         }
+
     }
     //Teste
 
@@ -103,6 +111,22 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        //fIREBASE
+        auth.signInWithEmailAndPassword(emailInserido.text.toString(), passwordInserida.text.toString())
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d(TAG, "signInWithEmail:success")
+                    Toast.makeText(baseContext, "Login co sucesso.",
+                        Toast.LENGTH_SHORT).show()
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Log.w(TAG, "signInWithEmail:failure", task.exception)
+                    Toast.makeText(baseContext, "Authentication failed.",
+                        Toast.LENGTH_SHORT).show()
+
+                }
+            }
     }
 
 }

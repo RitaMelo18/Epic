@@ -12,6 +12,8 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.graphics.drawable.toDrawable
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 
 class Conta : AppCompatActivity() {
@@ -110,7 +112,7 @@ class Conta : AppCompatActivity() {
             }
             var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-
+            FirebaseAuth.getInstance().signOut()
         }
 
         builder.setNegativeButton(R.string.Cancelar) { dialog: DialogInterface?, which: Int ->}

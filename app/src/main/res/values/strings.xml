@@ -35,4 +35,6 @@
     <string name="fotoUser" translatable="false">fotoshared</string>
     <string name="Id_LoginUser" translatable="false">idloginuser</string>
     <string name="Iniciar_atividade">Iniciar Atividade</string>
+    <string name="mensagens">Mensagens</string>
+    <string name="selectUser">Selecione os Utilizadores</string>
 </resources>
