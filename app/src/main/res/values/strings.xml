@@ -37,4 +37,5 @@
     <string name="Iniciar_atividade">Iniciar Atividade</string>
     <string name="mensagens">Mensagens</string>
     <string name="selectUser">Selecione os Utilizadores</string>
+    <string name="enterMessage">Escrever mensagem ...</string>
 </resources>

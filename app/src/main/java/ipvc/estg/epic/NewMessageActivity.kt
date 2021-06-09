@@ -1,6 +1,7 @@
 package ipvc.estg.epic
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -17,7 +18,6 @@ import de.hdodenhof.circleimageview.CircleImageView
 
 
 class NewMessageActivity : AppCompatActivity() {
-    private lateinit var database: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_message)
@@ -25,7 +25,11 @@ class NewMessageActivity : AppCompatActivity() {
         fetchUsers()
     }
 
-
+companion object{
+    val USER_KEY = "USER_KEY"
+    val USER_IMAGE = "USER_IMAGE"
+    val USER_UID = "USER_UID"
+}
     private fun fetchUsers() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView_newMessage)
         val ref = FirebaseDatabase.getInstance().getReference("/users")
@@ -40,6 +44,17 @@ class NewMessageActivity : AppCompatActivity() {
                             adapter.add(UserItem(user))
                         }
 
+                }
+                adapter.setOnItemClickListener{item, view ->
+                    val userItem = item as UserItem
+
+                    val intent = Intent(view.context, ChatLog::class.java)
+                    intent.putExtra(USER_KEY, userItem.user.username)
+                    intent.putExtra(USER_IMAGE, userItem.user.profileImageUrl)
+                    intent.putExtra(USER_UID, userItem.user.uid)
+                    startActivity(intent)
+
+                    finish()
                 }
                 recyclerView.adapter = adapter
             }
