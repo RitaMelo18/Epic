@@ -35,4 +35,13 @@
     <string name="fotoUser" translatable="false">fotoshared</string>
     <string name="Id_LoginUser" translatable="false">idloginuser</string>
     <string name="Iniciar_atividade">Iniciar Atividade</string>
+    <string name="terminar_atividade">Terminar Atividade</string>
+    <string name="Tempo">Tempo</string>
+    <string name="Distancia">Distância</string>
+    <string name="Passos">Passos</string>
+    <string name="Velocidade_media">Velocidade Média</string>
+    <string name="Calorias">Calorias</string>
+    <string name="km">KM</string>
+    <string name="km_h">KM/H</string>
+    <string name="title_activity_mapa_atividade">Map</string>
 </resources>
