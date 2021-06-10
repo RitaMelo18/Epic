@@ -44,4 +44,9 @@
     <string name="km">KM</string>
     <string name="km_h">KM/H</string>
     <string name="title_activity_mapa_atividade">Map</string>
+    <string name="atividade_publicada">Atividade publicada com sucesso!</string>
+    <string name="atividade_registada">Atividade registada com sucesso!</string>
+    <string name="erro">Erro</string>
+    <string name="publicar_atividade">Publicar</string>
+    <string name="registar_atividade">Registar</string>
 </resources>

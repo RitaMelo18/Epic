@@ -26,6 +26,8 @@ import ipvc.estg.epic.api.utilizador
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.*
 
 class Atividade : AppCompatActivity(), SensorEventListener {
 
@@ -43,6 +45,9 @@ class Atividade : AppCompatActivity(), SensorEventListener {
 
     private var passosTotais = 0
     private var mets = 0.0
+
+    private var data_inicio = ""
+    private var data_fim = ""
 
     private lateinit var lastLocation: Location
     private lateinit var fusedLocationClient: FusedLocationProviderClient
@@ -96,7 +101,7 @@ class Atividade : AppCompatActivity(), SensorEventListener {
             override fun onResponse(call: Call<utilizador>, response: Response<utilizador>) {
                 if (response.isSuccessful){
                     val e: utilizador = response.body()!!
-                    mets = (42 * e.peso.toInt())*0.005   // mets - variavel necessaria apra calcular as calorias
+                    mets = (13 * e.peso.toInt())*0.005   // mets - variavel necessaria apra calcular as calorias
                     Log.d("TAG**", "mets: "+mets)
                 }
             }
@@ -121,15 +126,9 @@ class Atividade : AppCompatActivity(), SensorEventListener {
 
                 loc = LatLng(lastLocation.latitude, lastLocation.longitude)
 
-                //array_coords = add_to_array(array_coords, loc)
-                //array_lat = add_to_array_double(array_lat, loc.latitude)
-                //array_lng = add_to_array_double(array_lng, loc.longitude)
-
                 string_caminho_lat = string_caminho_lat + "," + loc.latitude.toString()
                 string_caminho_lng = string_caminho_lng + "," + loc.longitude.toString()
 
-                Log.d("TAG**", "String: " + string_caminho_lat)
-                //Log.d("TAG**", "latitude: " + loc.latitude + " - longitude: " + loc.longitude)
             }
         }
 
@@ -182,9 +181,13 @@ class Atividade : AppCompatActivity(), SensorEventListener {
 
         var btn_ini_fim = this.findViewById<Button>(R.id.button2)
 
+        val formato_data = SimpleDateFormat("yyyy/M/dd hh:mm:ss")
+
         if(ativo == 0){     // iniciar a atividade
             btn_ini_fim.text = getString(R.string.terminar_atividade)
             btn_ini_fim.setBackgroundResource(R.drawable.atividade_btn)
+
+            data_inicio = formato_data.format(Date())
 
             cronometro?.setBase(SystemClock.elapsedRealtime())   // por o cronometro a 0
             cronometro?.start()      // iniciar cronometro
@@ -203,6 +206,8 @@ class Atividade : AppCompatActivity(), SensorEventListener {
             val distancia_total = distancia?.text.toString()
             val velocidade_m_total = velocidade_media?.text.toString()
 
+            data_fim = formato_data.format(Date())
+
             ativo--
             cronometro?.stop()
             running = false
@@ -218,6 +223,8 @@ class Atividade : AppCompatActivity(), SensorEventListener {
             intent.putExtra("DISTANCIA", distancia_total)  //distancia
             intent.putExtra("VELOCIDADE", velocidade_m_total)  //velocidade media
             intent.putExtra("TEMPO", tempo.toString())  //tempo - milisegundos
+            intent.putExtra("DATA_INICIO", data_inicio)     // data inicio atividade
+            intent.putExtra("DATA_FIM", data_fim)     // data fim atividade
             intent.putExtra("LATS", string_caminho_lat)
             intent.putExtra("LNGS", string_caminho_lng)
 
@@ -263,7 +270,7 @@ class Atividade : AppCompatActivity(), SensorEventListener {
             var horas = segundos * 0.000277
             var velocidade_m = km * (1/horas.toFloat())
             var cal = minutos * mets
-            Log.d("TAG**", "Minutos: " + minutos + " mets: " + mets + " Calorias: " + cal)
+            //Log.d("TAG**", "Minutos: " + minutos + " mets: " + mets + " Calorias: " + cal)
 
             if(previousTotalSteps != 0f){
                 passosTotais += currentSteps
@@ -289,14 +296,6 @@ class Atividade : AppCompatActivity(), SensorEventListener {
     private fun resetPassos (){
         passos?.text = 0.toString()
     }
-
-    // Função para adicionar a LOC atual ao array_coords
-    /*fun add_to_array (arr: Array<LatLng?>, coords: LatLng): Array<LatLng?> {
-        val array = arr.copyOf(arr.size + 1)
-        array[arr.size] = coords
-
-        return array
-    }*/
 
     fun add_to_array_double (arr: Array<Double?>, coords: Double): Array<Double?> {
         val array = arr.copyOf(arr.size + 1)
