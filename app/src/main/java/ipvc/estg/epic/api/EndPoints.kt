@@ -20,7 +20,8 @@ interface EndPoints {
                 @Field("calorias") fifth: Int, @Field("utilizador_id") sixth: Int,
                 @Field("imagem_mapa") seventh: String, @Field("data_inicio") eighth: String,
                      @Field("data_fim") ninth: String, @Field("foto_utilizador") tenth: String,
-                     @Field("nome") eleventh: String, @Field("publicado") twelfth: Int): Call<atividade>
+                     @Field("nome") eleventh: String, @Field("publicado") twelfth: Int,
+                     @Field("imagem") thirteenth: String, @Field("nomeImagem") fourteenth: String): Call<atividade>
 
     @FormUrlEncoded
     @POST("/myslim2/api/utilizadorAll")

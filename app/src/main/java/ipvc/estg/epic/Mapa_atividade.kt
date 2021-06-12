@@ -57,7 +57,7 @@ class Mapa_atividade : AppCompatActivity(), OnMapReadyCallback {
     private var foto_utl : Any? = ""
     private var nome_utl : Any? = ""
 
-    private lateinit var encodedImage : String
+    var encodedImage = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -145,74 +145,24 @@ class Mapa_atividade : AppCompatActivity(), OnMapReadyCallback {
 
     }
 
-    fun captureScreen() {
-       /* val callback =
-            SnapshotReadyCallback { snapshot -> // TODO Auto-generated method stub
-                if (snapshot != null) {
-                    mSnapshot = snapshot
-                }
-
-                val imgView = this.findViewById<ImageView>(R.id.imagem_1)
-
-                imgView.setImageBitmap(snapshot)
-
-                var fout: OutputStream? = null
-                val filePath = System.currentTimeMillis().toString() + ".jpeg"
-
-                try {
-
-                    fout = openFileOutput(filePath, MODE_APPEND)
-
-                    // above "/mnt ..... png" => is a storage path (where image will be stored) + name of image you can customize as per your Requirement
-                    var ola= mSnapshot.compress(Bitmap.CompressFormat.JPEG, 90, fout)
-                    fout.flush()
-                    fout.close()
-
-                    Log.d("TAG**", ola.toString())
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                    Log.d("TAG**", e.toString())
-                }
-
-                val file: File = getFileStreamPath(filePath)
-                Log.d("TAG**", file.getAbsolutePath().toString())
-
-            } */
-
-
-
-
-
-        //mMap.snapshot(callback)
-    }
-
-
-    private fun snapshot_mapa() {
+    fun snapshot(publicar: Int) {
+        // --------- PRINT AO MAPA ---------
         val callback: SnapshotReadyCallback = object : SnapshotReadyCallback {
             var bitmap: Bitmap? = null
             override fun onSnapshotReady(snapshot: Bitmap?) {
                 bitmap = snapshot
                 val bos = ByteArrayOutputStream()
                 bitmap!!.compress(Bitmap.CompressFormat.JPEG, 100, bos)
-                encodedImage = Base64.encodeToString(bos.toByteArray(), Base64.DEFAULT)
-                Log.d("TAG**", encodedImage)
-                /*try {
-                    var fout: OutputStream? = null
-                    val filePath = System.currentTimeMillis().toString() + ".jpeg"
-                    fout = openFileOutput(filePath, MODE_APPEND)
-                    bitmap!!.compress(Bitmap.CompressFormat.PNG, 90, fout)
-                    fout.flush()
-                    fout.close()
-                    val file: File = getFileStreamPath(filePath)
-                    Log.d("TAG**", bitmap.toString())
-                    Log.d("TAG**", "DEU")
-                } catch (e: Exception) {
-                    Log.d("TAG**", e.toString())
-                }*/
+                val img_64 : String = Base64.encodeToString(bos.toByteArray(), Base64.DEFAULT)
+                encodedImage = img_64
+                publicar_atividade(publicar)
             }
         }
         mMap.snapshot(callback)
+        // ---------------------------------
+
     }
+
 
     private fun publicar_atividade(publicar: Int) {
 
@@ -224,11 +174,14 @@ class Mapa_atividade : AppCompatActivity(), OnMapReadyCallback {
         val nome_u : String = nome_utl.toString()
         val foto_u : String = foto_utl.toString()
 
-        // tempo_segundos - distancia_total - passos_total - velocidade_m_total - calorias_total - id_utl - encodedImage - data_inicio - data_fim - foto_utl - nome_utl
+        val nome_img = System.currentTimeMillis().toString()
 
+        var imageUrl = "https://22362tpcm.000webhostapp.com/myslim2/api/imagens/" + nome_img + ".JPEG"
+        Log.d("TAG**", "IMAGEM: " + encodedImage)
         val request = ServiceBuilder.buildService(EndPoints::class.java)
-        val call = request.addAtividade(tempo_segundos, distancia_total, passos_total, velocidade_m_total, calorias_total, id_u, "xxxxx", data_inicio, data_fim, foto_u, nome_u, publicar)
-        var intent = Intent(this, Home::class.java)
+        val call = request.addAtividade(tempo_segundos, distancia_total, passos_total, velocidade_m_total, calorias_total, id_u, imageUrl.toString(), data_inicio, data_fim, foto_u, nome_u, publicar, encodedImage, nome_img)
+
+     var intent = Intent(this, Home::class.java)
 
         call.enqueue(object : Callback<atividade> {
             override fun onResponse(call: Call<atividade>, response: Response<atividade>) {
@@ -245,6 +198,7 @@ class Mapa_atividade : AppCompatActivity(), OnMapReadyCallback {
 
             override fun onFailure(call: Call<atividade>, t: Throwable) {
                 //Toast.makeText(this@Editar_eliminarPontos, "${t.message}", Toast.LENGTH_SHORT).show()
+                Log.d("TAG**", "ERRO: " + t.message)
             }
         })
 
@@ -256,7 +210,7 @@ class Mapa_atividade : AppCompatActivity(), OnMapReadyCallback {
         //distancia_total - passos_total
 
         var km_total : Double = 0.0
-        var passos_total : Int = 0
+        var passos_t: Int = 0
 
         val request = ServiceBuilder.buildService(EndPoints::class.java)
         val call = request.getUtlAll(id_utl as Int)
@@ -266,8 +220,8 @@ class Mapa_atividade : AppCompatActivity(), OnMapReadyCallback {
                 if (response.isSuccessful){
                     val e: utilizador = response.body()!!
                     Log.d("TAG**", "km: " + e.km_totais.toString() + " passos: " + e.passos_totais.toString())
-                        km_total = e.km_totais
-                        passos_total = e.passos_totais
+                    km_total = e.km_totais
+                    passos_t = e.passos_totais
                 }
             }
 
@@ -278,7 +232,7 @@ class Mapa_atividade : AppCompatActivity(), OnMapReadyCallback {
 
         //alterar novos dados
 
-        val call_1 = request.atualizarUtl(id_utl as Int, (km_total + 2), (passos_total + 1500))
+        val call_1 = request.atualizarUtl(id_utl as Int, (km_total + distancia_total), (passos_t + passos_total))
 
         call_1.enqueue(object : Callback<utilizador>{
             override fun onResponse(call: Call<utilizador>, response: Response<utilizador>) {
@@ -296,15 +250,13 @@ class Mapa_atividade : AppCompatActivity(), OnMapReadyCallback {
 
 
     fun publicar(view: View) {
-        snapshot_mapa()
+        snapshot(1)         // 1 -  publicar a atividade
         editar_dados_utilizador()
-        //publicar_atividade(1)     // 1 -  publicar a atividade
     }
 
     fun registar(view: View) {
-        snapshot_mapa()
+        snapshot(0)         // 0 -  não publicar a atividade
         editar_dados_utilizador()
-        //publicar_atividade(0)     // 0 - não publicar a atividade
     }
 
 

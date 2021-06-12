@@ -12,5 +12,7 @@ data class atividade (
     val data_fim: String,
     val foto_utilizador: String,
     val nome: String,
-    val publicado: Int
+    val publicado: Int,
+    val imagem: String,
+    val nomeImagem: String
 )
