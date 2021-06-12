@@ -25,6 +25,7 @@ import com.squareup.picasso.Picasso
 import ipvc.estg.epic.api.EndPoints
 import ipvc.estg.epic.api.ServiceBuilder
 import ipvc.estg.epic.api.atividade
+import ipvc.estg.epic.api.utilizador
 import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStream
@@ -55,6 +56,8 @@ class Mapa_atividade : AppCompatActivity(), OnMapReadyCallback {
     private var id_utl : Any? = 0
     private var foto_utl : Any? = ""
     private var nome_utl : Any? = ""
+
+    private lateinit var encodedImage : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -191,7 +194,7 @@ class Mapa_atividade : AppCompatActivity(), OnMapReadyCallback {
                 bitmap = snapshot
                 val bos = ByteArrayOutputStream()
                 bitmap!!.compress(Bitmap.CompressFormat.JPEG, 100, bos)
-                val encodedImage: String = Base64.encodeToString(bos.toByteArray(), Base64.DEFAULT)
+                encodedImage = Base64.encodeToString(bos.toByteArray(), Base64.DEFAULT)
                 Log.d("TAG**", encodedImage)
                 /*try {
                     var fout: OutputStream? = null
@@ -221,7 +224,7 @@ class Mapa_atividade : AppCompatActivity(), OnMapReadyCallback {
         val nome_u : String = nome_utl.toString()
         val foto_u : String = foto_utl.toString()
 
-        // tempo_segundos - distancia_total - passos_total - velocidade_m_total - calorias_total - id_utl - x - data_inicio - data_fim - foto_utl - nome_utl
+        // tempo_segundos - distancia_total - passos_total - velocidade_m_total - calorias_total - id_utl - encodedImage - data_inicio - data_fim - foto_utl - nome_utl
 
         val request = ServiceBuilder.buildService(EndPoints::class.java)
         val call = request.addAtividade(tempo_segundos, distancia_total, passos_total, velocidade_m_total, calorias_total, id_u, "xxxxx", data_inicio, data_fim, foto_u, nome_u, publicar)
@@ -247,14 +250,61 @@ class Mapa_atividade : AppCompatActivity(), OnMapReadyCallback {
 
     }
 
+
+    private fun editar_dados_utilizador() {
+        //chamar os dados atuais do utilizador
+        //distancia_total - passos_total
+
+        var km_total : Double = 0.0
+        var passos_total : Int = 0
+
+        val request = ServiceBuilder.buildService(EndPoints::class.java)
+        val call = request.getUtlAll(id_utl as Int)
+
+        call.enqueue(object : Callback<utilizador> {
+            override fun onResponse(call: Call<utilizador>, response: Response<utilizador>) {
+                if (response.isSuccessful){
+                    val e: utilizador = response.body()!!
+                    Log.d("TAG**", "km: " + e.km_totais.toString() + " passos: " + e.passos_totais.toString())
+                        km_total = e.km_totais
+                        passos_total = e.passos_totais
+                }
+            }
+
+            override fun onFailure(call: Call<utilizador>, t: Throwable) {
+                /* Toast.makeText(this@MainActivity, "${t.message}", Toast.LENGTH_SHORT).show()*/
+            }
+        })
+
+        //alterar novos dados
+
+        val call_1 = request.atualizarUtl(id_utl as Int, (km_total + 2), (passos_total + 1500))
+
+        call_1.enqueue(object : Callback<utilizador>{
+            override fun onResponse(call: Call<utilizador>, response: Response<utilizador>) {
+                if(response.isSuccessful){
+                    Log.d("TAG**", "FUNCIONEI")
+                }
+            }
+            override fun onFailure(call: Call<utilizador>, t: Throwable) {
+                /* Toast.makeText(this@MainActivity, "${t.message}", Toast.LENGTH_SHORT).show()*/
+                Log.d("TAG**", "NAOO FUNCIONEI")
+            }
+        })
+
+    }
+
+
     fun publicar(view: View) {
         snapshot_mapa()
-        //publicar_atividade(1)
+        editar_dados_utilizador()
+        //publicar_atividade(1)     // 1 -  publicar a atividade
     }
 
     fun registar(view: View) {
         snapshot_mapa()
-        //publicar_atividade(0)
+        editar_dados_utilizador()
+        //publicar_atividade(0)     // 0 - não publicar a atividade
     }
 
 

@@ -22,4 +22,9 @@ interface EndPoints {
                      @Field("data_fim") ninth: String, @Field("foto_utilizador") tenth: String,
                      @Field("nome") eleventh: String, @Field("publicado") twelfth: Int): Call<atividade>
 
+    @FormUrlEncoded
+    @POST("/myslim2/api/utilizadorAll")
+    fun atualizarUtl(@Field("id") first: Int, @Field("km_totais") second: Double,
+                        @Field("passos_totais") third: Int): Call<utilizador>
+
 }
