@@ -35,31 +35,4 @@
     <string name="fotoUser" translatable="false">fotoshared</string>
     <string name="Id_LoginUser" translatable="false">idloginuser</string>
     <string name="Iniciar_atividade">Iniciar Atividade</string>
-    <string name="Treinador">Treinador Pessoal</string>
-    <string name="Nutricionista">Nutricionista</string>
-    <string name="Anabela">Anabela Pires</string>
-    <string name="Diogo">Diogo Almeida</string>
-    <string name="Gonçalo">Gonçalo Santos</string>
-    <string name="Sara">Sara Esteves</string>
-    <string name="TextoPT">Olá Atletas!  Eu sou a Anabela, sou uma Personal Trainer, especialista certificada em fitness em Portugal, preparada para te ajudar a conquistar os teus maiores objectivos Fit.   Aqui podes escolher o que queres usufruir:  :arrows_counterclockwise: Visualização de vídeos de treino em replay  :movie_camera: Treinos em directo comigo, onde basta seguir o que estou a fazer  :speaking_head: Directos interactivos onde conversamos juntos com outros profissionais especialistas esclarecemos as vossas dúvidas para que consigam obter os melhores resultados  :person_lifting_weights: Dicas exclusivas de treino  Fico à tua espera!</string>
-    <string name="OlaAtletas">Olá Atletas!</string>
-    <string name="Apresentacao">Eu sou o Diogo, sou um Personal Trainer, especialista certificado em fitness em Portugal, preparado para te ajudar a conquistar os teus maiores objectivos Fit.</string>
-    <string name="opc1">Aqui podes escolher o que queres usufruir:</string>
-    <string name="opc2">-> Visualização de vídeos de treino em replay</string>
-    <string name="opc3">-> Treinos em directo comigo, onde basta seguir o que estou a fazer</string>
-    <string name="opc4">-> Dicas exclusivas de treino</string>
-    <string name="opc5">Fico à tua espera!</string>
-    <string name="base">BASE</string>
-    <string name="premium">PREMIUM</string>
-    <string name="elite">ELITE</string>
-    <string name="sete">7€</string>
-    <string name="dezassete">17€</string>
-    <string name="cem">100€</string>
-    <string name="pormes">Por mês</string>
-    <string name="textoBase">BIBLIOTECA DE VIDEOS DE TREINO  Semanalmente terás acesso a novos videos de treino, tais como replay dos treinos que faremos em directo.</string>
-    <string name="textoPremium">Todos os recursos do Pack anterior. Treino Live de 16 e 20 minutos Treinos e Desafios, estilo aula de grupo, em directo comigo de 16 e 20 minutos onde podes fazer onde quiseres. (4 lives por semana)  Publicações Exclusivas</string>
-    <string name="textoElite">ATENÇÃO: VAGAS LIMITADAS  Todos os recursos dos Packs anteriores + Acompanhamento Online Comigo</string>
-    <string name="Aderir">Aderir</string>
-    <string name="Duvida">Alguma dúvida?</string>
-    <string name="mensagem">Enviar mensagem</string>
 </resources>
