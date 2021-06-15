@@ -35,4 +35,10 @@
     <string name="fotoUser" translatable="false">fotoshared</string>
     <string name="Id_LoginUser" translatable="false">idloginuser</string>
     <string name="Iniciar_atividade">Iniciar Atividade</string>
+    <string name="Treinador">Treinador Pessoal</string>
+    <string name="Nutricionista">Nutricionista</string>
+    <string name="Anabela">Anabela Pires</string>
+    <string name="Diogo">Diogo Almeida</string>
+    <string name="Gonçalo">Gonçalo Santos</string>
+    <string name="Sara">Sara Esteves</string>
 </resources>
