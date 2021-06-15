@@ -17,6 +17,8 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="20dp"
+        app:civ_border_width="1dp"
+        app:civ_border_color="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -47,6 +49,15 @@
         android:text="Nooooooooooo"
         app:layout_constraintEnd_toStartOf="@+id/imagemUtilizador"
         app:layout_constraintTop_toBottomOf="@+id/utilizador" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/imagemUtilizador"
+        app:layout_constraintTop_toBottomOf="@+id/mensagem" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

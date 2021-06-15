@@ -29,6 +29,7 @@ companion object{
     val USER_KEY = "USER_KEY"
     val USER_IMAGE = "USER_IMAGE"
     val USER_UID = "USER_UID"
+    val ESTADO = 0
 }
     private fun fetchUsers() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView_newMessage)

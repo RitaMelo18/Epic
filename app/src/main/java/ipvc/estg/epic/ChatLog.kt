@@ -59,11 +59,11 @@ class ChatLog : AppCompatActivity() {
                         val nome = currentUser?.username
                         adapter.add(ChatToItem(chatMessage.text, foto, nome))
                     }else{
-                        adapter.add(ChatFromItem(chatMessage.text, profileUser, username))
+                        adapter.add(ChatFromItem(chatMessage.text, profileUser, username, ))
                     }
 
                 }
-
+                findViewById<RecyclerView>(R.id.recyclerView_Chat).scrollToPosition(adapter.itemCount -1)
             }
 
             override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
@@ -90,20 +90,33 @@ class ChatLog : AppCompatActivity() {
         val fromId = FirebaseAuth.getInstance().uid
         val toId = toUser
         val ref = FirebaseDatabase.getInstance().getReference("/user-messages/$fromId/$toId").push()
+        val estado = 0
+
         //Mensagem reversa
         val toRef = FirebaseDatabase.getInstance().getReference("/user-messages/$toId/$fromId").push()
 
-        val chatMessage = ChatMessage(ref.key!!, message, fromId!!, toUser!!, System.currentTimeMillis())
-
-        ref.setValue(chatMessage).addOnSuccessListener {
+        val chatMessageUser = ChatMessage(ref.key!!, message, fromId!!, toUser!!, System.currentTimeMillis(), 1)
+        val chatMessagePattern = ChatMessage(ref.key!!, message, fromId!!, toUser!!, System.currentTimeMillis(), 0)
+        ref.setValue(chatMessageUser).addOnSuccessListener {
             Log.d("Aaa", "Mensagem guardada: ${ref.key}")
             findViewById<EditText>(R.id.editTextMessage).text.clear()
             findViewById<RecyclerView>(R.id.recyclerView_Chat).scrollToPosition(adapter.itemCount -1)
         }
 
-        toRef.setValue(chatMessage).addOnSuccessListener {
+        toRef.setValue(chatMessagePattern).addOnSuccessListener {
             Log.d("Aaa", "Mensagem guardada ao contrário: ${ref.key}")
         }
+
+        //Guardar a última mensagem trocada no grupo
+        val latestMessageref = FirebaseDatabase.getInstance().getReference("/latest-messages/$fromId/$toId")
+        latestMessageref.setValue(chatMessageUser)
+
+        val latestMessageToref = FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromId")
+        latestMessageToref.setValue(chatMessagePattern)
+    }
+
+    fun back(view: View) {
+        finish()
     }
 }
 
@@ -119,6 +132,7 @@ class ChatToItem(val text: String, val foto: String?, val username: String?): It
 
         //Username
         viewHolder.itemView.findViewById<TextView>(R.id.utilizador).text = username
+
     }
 
     override fun getLayout(): Int {
@@ -137,6 +151,7 @@ class ChatFromItem(val text: String, val foto: String?, val nome: String?): Item
 
         //Username
         viewHolder.itemView.findViewById<TextView>(R.id.recetor).text = nome
+
     }
 
     override fun getLayout(): Int {

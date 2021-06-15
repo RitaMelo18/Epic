@@ -16,6 +16,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
+        app:civ_border_color="@color/black"
+        app:civ_border_width="1dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -45,4 +47,13 @@
         android:layout_marginBottom="20dp"
         app:layout_constraintStart_toEndOf="@+id/imagemRecetor"
         app:layout_constraintTop_toBottomOf="@+id/recetor" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text=" "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mensagemrecetor" />
 </androidx.constraintlayout.widget.ConstraintLayout>
