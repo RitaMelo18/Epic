@@ -172,4 +172,9 @@ class Chat : AppCompatActivity() {
     fun back(view: View) {
         finish()
     }
+
+    fun grupo(view: View) {
+        val intent = Intent(this, Grupo::class.java)
+        startActivity(intent)
+    }
 }

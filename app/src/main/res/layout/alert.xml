@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Criar competição"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp">
+    </TextView>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Nome competição"
+        android:textColor="@color/cinzento_escuro"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp">
+    </TextView>
+
+    <EditText
+        android:id="@+id/nomeCompeticao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:text=""
+        android:inputType="textPersonName"
+        android:hint="Nome cometição" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Data Limite"
+        android:textColor="@color/cinzento_escuro"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp">
+    </TextView>
+    <CalendarView
+        android:id="@+id/dataCompeticao"
+        android:layout_width="287dp"
+        android:layout_height="305dp"
+        android:layout_gravity="center"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>

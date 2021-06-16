@@ -11,4 +11,7 @@
     <color name="colorPrimaryDark">#0085c1</color>
     <color name="colorPrimaryLight">#72e7ff</color>
     <color name="cinzento">#fafafa</color>
+    <color name="cinzento_escuro">#A9A9A9</color>
+    <color name="cinzento_claro">#f9f9f9</color>
+    <color name="vermelho">#FF4600</color>
 </resources>

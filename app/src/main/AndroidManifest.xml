@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
-        <activity android:name=".ChatLog"></activity>
+        <activity android:name=".Grupo"></activity>
+        <activity android:name=".ChatLog" />
         <activity android:name=".NewMessageActivity" />
         <activity android:name=".Chat" />
         <activity android:name=".Conta" />

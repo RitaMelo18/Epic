@@ -67,13 +67,63 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_latest_message"
-        android:layout_width="409dp"
-        android:layout_height="617dp"
+        android:layout_width="412dp"
+        android:layout_height="wrap_content"
+        android:maxHeight="517dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <RelativeLayout
+        android:layout_width="411dp"
+        android:layout_height="147dp"
+        android:onClick="grupo"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/recycler_latest_message"
+        app:layout_constraintTop_toBottomOf="@+id/recycler_latest_message">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView3"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/abacaxi"
+            app:civ_border_color="@color/black"
+            app:civ_border_width="1dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Abacaxi"
+            android:textStyle="bold"
+            android:layout_toRightOf="@id/imageView3"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/imageView3"
+            android:layout_below="@id/textView13"
+            android:text="Quero ver isso!"
+
+
+            app:layout_constraintStart_toEndOf="@+id/imageView3" />
+
+    </RelativeLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

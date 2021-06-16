@@ -1,11 +1,15 @@
 package ipvc.estg.epic
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
+import android.widget.CalendarView
 import android.widget.EditText
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ChildEventListener
@@ -18,12 +22,14 @@ import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.Item
 import de.hdodenhof.circleimageview.CircleImageView
 import ipvc.estg.epic.classes.ChatMessage
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ChatLog : AppCompatActivity() {
     val adapter = GroupAdapter<GroupieViewHolder>()
-    var toUser:String? = null
-    var profileUser:String? = null
-    var username:String? = null
+    var toUser: String? = null
+    var profileUser: String? = null
+    var username: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat_log)
@@ -49,21 +55,21 @@ class ChatLog : AppCompatActivity() {
         val ref = FirebaseDatabase.getInstance().getReference("/user-messages/$fromId/$toId")
 
         //Dar refresh se detetar uma mensagem nova
-        ref.addChildEventListener(object: ChildEventListener{
+        ref.addChildEventListener(object : ChildEventListener {
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
-               val chatMessage = snapshot.getValue(ChatMessage::class.java)
-                if(chatMessage != null){
-                    if(chatMessage.fromId == FirebaseAuth.getInstance().uid){
+                val chatMessage = snapshot.getValue(ChatMessage::class.java)
+                if (chatMessage != null) {
+                    if (chatMessage.fromId == FirebaseAuth.getInstance().uid) {
                         val currentUser = Chat.currentUser
                         val foto = currentUser?.profileImageUrl
                         val nome = currentUser?.username
                         adapter.add(ChatToItem(chatMessage.text, foto, nome))
-                    }else{
-                        adapter.add(ChatFromItem(chatMessage.text, profileUser, username, ))
+                    } else {
+                        adapter.add(ChatFromItem(chatMessage.text, profileUser, username))
                     }
 
                 }
-                findViewById<RecyclerView>(R.id.recyclerView_Chat).scrollToPosition(adapter.itemCount -1)
+                findViewById<RecyclerView>(R.id.recyclerView_Chat).scrollToPosition(adapter.itemCount - 1)
             }
 
             override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
@@ -93,14 +99,17 @@ class ChatLog : AppCompatActivity() {
         val estado = 0
 
         //Mensagem reversa
-        val toRef = FirebaseDatabase.getInstance().getReference("/user-messages/$toId/$fromId").push()
+        val toRef =
+            FirebaseDatabase.getInstance().getReference("/user-messages/$toId/$fromId").push()
 
-        val chatMessageUser = ChatMessage(ref.key!!, message, fromId!!, toUser!!, System.currentTimeMillis(), 1)
-        val chatMessagePattern = ChatMessage(ref.key!!, message, fromId!!, toUser!!, System.currentTimeMillis(), 0)
+        val chatMessageUser =
+            ChatMessage(ref.key!!, message, fromId!!, toUser!!, System.currentTimeMillis(), 1)
+        val chatMessagePattern =
+            ChatMessage(ref.key!!, message, fromId!!, toUser!!, System.currentTimeMillis(), 0)
         ref.setValue(chatMessageUser).addOnSuccessListener {
             Log.d("Aaa", "Mensagem guardada: ${ref.key}")
             findViewById<EditText>(R.id.editTextMessage).text.clear()
-            findViewById<RecyclerView>(R.id.recyclerView_Chat).scrollToPosition(adapter.itemCount -1)
+            findViewById<RecyclerView>(R.id.recyclerView_Chat).scrollToPosition(adapter.itemCount - 1)
         }
 
         toRef.setValue(chatMessagePattern).addOnSuccessListener {
@@ -108,15 +117,43 @@ class ChatLog : AppCompatActivity() {
         }
 
         //Guardar a última mensagem trocada no grupo
-        val latestMessageref = FirebaseDatabase.getInstance().getReference("/latest-messages/$fromId/$toId")
+        val latestMessageref =
+            FirebaseDatabase.getInstance().getReference("/latest-messages/$fromId/$toId")
         latestMessageref.setValue(chatMessageUser)
 
-        val latestMessageToref = FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromId")
+        val latestMessageToref =
+            FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromId")
         latestMessageToref.setValue(chatMessagePattern)
     }
 
     fun back(view: View) {
         finish()
+    }
+
+    fun competicao(view: View) {
+        // Use the Builder class for convenient dialog construction
+        val builder = AlertDialog.Builder(this)
+        val inflater: LayoutInflater = LayoutInflater.from(applicationContext)
+        val layout: View = inflater.inflate(R.layout.alert, null)
+        // Inflate and set the layout for the dialog
+        // Pass null as the parent view because its going in the dialog layout
+        builder.setView(inflater.inflate(R.layout.alert, null))
+            // Add action buttons
+            .setPositiveButton("Criar Competição",
+                DialogInterface.OnClickListener { dialog, id ->
+                    val nome = layout.findViewById<EditText>(R.id.nomeCompeticao)
+                    val data = layout.findViewById<CalendarView>(R.id.dataCompeticao)
+
+                    val sdf = SimpleDateFormat("dd/MM/yyyy")
+                    val selectedDate: String = sdf.format(Date(data.getDate()))
+                   Log.d("TAG**", "DATA: " + selectedDate.toString()+"nOME" + nome.text.toString())
+                })
+            .setNegativeButton("Cancelar",
+                DialogInterface.OnClickListener { dialog, id ->
+                    dialog.cancel()
+                })
+        builder.create()
+        builder.show()
     }
 }
 
