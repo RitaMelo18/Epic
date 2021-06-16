@@ -28,4 +28,11 @@ interface EndPoints {
     fun atualizarUtl(@Field("id") first: Int, @Field("km_totais") second: Double,
                         @Field("passos_totais") third: Int): Call<utilizador>
 
+    @GET("/myslim2/api/atividade")
+    fun getAtividade(): Call<MutableList<feed>>
+
+    @FormUrlEncoded
+    @POST("/myslim2/api/saudeUtl")
+    fun postDadosSaude(@Field("id") first: Int): Call<saude>
+
 }

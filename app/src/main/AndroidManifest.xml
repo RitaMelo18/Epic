@@ -2,14 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ipvc.estg.epic">
 
-    <!--
-         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
-         Google Maps Android API v2, but you must specify either coarse or fine
-         location permissions for the "MyLocation" functionality.
-    -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
 
     <application
         android:allowBackup="true"
@@ -34,6 +32,8 @@
         <activity
             android:name=".Mapa_atividade"
             android:label="@string/title_activity_mapa_atividade"></activity>
+        <activity android:name=".Conta" />
+        <activity android:name=".TreinadorPessoal"></activity>
         <activity android:name=".Conta" />
         <activity android:name=".Servicos" />
         <activity android:name=".Saude" />

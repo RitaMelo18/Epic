@@ -66,4 +66,9 @@ class Servicos : AppCompatActivity() {
         var intent = Intent(this, Conta::class.java)
         startActivity(intent)
     }
+
+    fun DiogoAlmeida(view: View) {
+        var intent = Intent(this, TreinadorPessoal::class.java)
+        startActivity(intent)
+    }
 }

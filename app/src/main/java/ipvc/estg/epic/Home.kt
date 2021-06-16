@@ -5,10 +5,23 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import ipvc.estg.epic.adapter.PostAdapter
+import ipvc.estg.epic.api.EndPoints
+import ipvc.estg.epic.api.ServiceBuilder
+import ipvc.estg.epic.api.feed
+import ipvc.estg.epic.api.utilizador
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Home : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +41,44 @@ class Home : AppCompatActivity() {
 
             imagem.requestLayout();
         }
+
+        //Listar atividade no feed
+
+        val recyclerView = findViewById<RecyclerView>(R.id.myRecyclerview)
+
+
+        val request = ServiceBuilder.buildService(EndPoints::class.java)
+        val call = request.getAtividade()
+
+
+            call.enqueue(object : Callback<MutableList<feed>> {
+                override fun onResponse(call: Call<MutableList<feed>>, response: Response<MutableList<feed>>) {
+                    if (response.isSuccessful) {
+                        recyclerView.apply {
+                            layoutManager = LinearLayoutManager(this@Home)
+                            adapter = PostAdapter(response.body()!!)
+                            Log.d("****AQUI", response.body().toString())
+                        }
+
+
+                    }
+                }
+
+                override fun onFailure(call: Call<MutableList<feed>>, t: Throwable) {
+                    /* Toast.makeText(this@MainActivity, "${t.message}", Toast.LENGTH_SHORT).show()*/
+                    t.printStackTrace()
+                    Log.d("****ERRO", t.message.toString())
+                }
+            })
+
+
+
+
+
+
+
     }
+
 
     //Ir para as classificações
     fun Classificacoes(view: View) {
