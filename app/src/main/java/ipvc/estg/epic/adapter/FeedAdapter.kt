@@ -44,6 +44,7 @@ class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         DadosAtividadeTempo.text = "Tempo: " +postModel.tempo.toString() + " min"
         Picasso.get().load(postModel.imagem_mapa).into(imagemAtividadeMapa)
 
+
     }
 
 }

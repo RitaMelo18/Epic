@@ -158,5 +158,597 @@
 
     </RelativeLayout>
 
+    <Button
+        android:id="@+id/amigos"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:background="@drawable/classificacoes_btns"
+        android:text="@string/amigos"
+        android:textSize="20dp"
+        android:textColor="@color/azul"
+        android:textStyle="bold"
+        android:onClick="class_amigos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"/>
+
+    <Button
+        android:id="@+id/globais"
+        android:layout_width="214dp"
+        android:layout_height="80dp"
+        android:background="@drawable/classificacoes_btns"
+        android:text="@string/globais"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:onClick="class_global"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/amigos"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/primeiro"
+        android:layout_width="373dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amigos">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView18"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/tania"
+            app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/tania"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/km_totals"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="55dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/passos_totals"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="75dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/medalha_epic"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="317dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/trofeu_1"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView19"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="317dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/med_epic"
+            app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/segundo"
+        android:layout_width="373dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/primeiro">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/joao"
+            app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+        <TextView
+            android:id="@+id/textVi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/joao"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textVie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/km_totals"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="55dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/passos_totals"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textVieww"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="75dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/medalha_bolt"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="317dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/trofeu_2"/>
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="317dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/medalha"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/terceiro"
+        android:layout_width="373dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/segundo">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_1"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/rita"
+            app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+        <TextView
+            android:id="@+id/textVi_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/rita"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textVie_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/km_totals"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="55dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/passos_totals"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textVieww_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="75dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/medalha_bolt"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="317dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/trofeu_3"/>
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="317dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/medalha"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/primeiro_g"
+        android:layout_width="373dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amigos">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView18_g"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/glob1"
+            app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+        <TextView
+            android:id="@+id/textView15_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/glob1"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textView19_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/km_totals"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView20_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="55dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/passos_totals"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView21_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="75dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/medalha_master_epic"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="317dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/trofeu_1"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView19_g"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="317dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/med_epic"
+            app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/segundo_g"
+        android:layout_width="373dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/primeiro_g">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_g"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/glob2"
+            app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+        <TextView
+            android:id="@+id/textVi_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/glob2"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textVie_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/km_totals"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="55dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/passos_totals"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textVieww_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="75dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/medalha_dedicado"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="317dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/trofeu_2"/>
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="317dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/medalha"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/terceiro_g"
+        android:layout_width="373dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/segundo_g">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_1_g"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/blob3"
+            app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+        <TextView
+            android:id="@+id/textVi_1_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/glob3"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textVie_1_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/km_totals"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView_1_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="55dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/passos_totals"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textVieww_1_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="75dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/medalha_pokepic"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="317dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/trofeu_3"/>
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="317dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/poke"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/quarto_g"
+        android:layout_width="373dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/terceiro_g">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_2_g"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/glob4"
+            app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+        <TextView
+            android:id="@+id/textVi_2_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/glob4"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textVie_2_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/km_totals"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView_2_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="55dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/passos_totals"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textVieww_2_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="75dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/medalha_dedicado"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="317dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/trofeu_3"/>
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="317dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/medalha"/>
+
+    </androidx.cardview.widget.CardView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

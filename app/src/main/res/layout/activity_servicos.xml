@@ -7,6 +7,200 @@
     android:background="@color/white"
     tools:context=".Servicos">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="373dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.931" >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView21"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            app:srcCompat="@drawable/ic_baseline_account_circle_24"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/h1"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/Gonçalo"
+            android:textColor="#000000"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="@string/Treinador"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="60dp"/>
+
+        <RatingBar
+            android:id="@+id/ratingBar4"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="10dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:progressTint="#ffd203"
+            android:rating="3" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="3"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:layout_marginTop="28dp"
+            android:layout_marginLeft="317dp"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="373dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.712" >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView20"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            app:srcCompat="@drawable/ic_baseline_account_circle_24"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/mulher2"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/Anabela"
+            android:textColor="#000000"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="@string/Treinador"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="60dp"/>
+
+        <RatingBar
+            android:id="@+id/ratingBar2"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:progressTint="#ffd203"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="10dp"
+            android:rating="4" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="4"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:layout_marginTop="28dp"
+            android:layout_marginLeft="317dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="373dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.478" >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView19"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/mulher"
+            app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/Sara"
+            android:textColor="#000000"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="@string/Treinador"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="60dp"/>
+
+        <RatingBar
+            android:id="@+id/ratingBar3"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:progressTint="#ffd203"
+            android:rating="4"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="4"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:layout_marginTop="28dp"
+            android:layout_marginLeft="317dp"/>
+    </androidx.cardview.widget.CardView>
+
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="42dp"
@@ -63,6 +257,7 @@
         app:layout_constraintVertical_bias="0.584" />
 
     <RelativeLayout
+        android:id="@+id/relativeLayout2"
         android:layout_width="350dp"
         android:layout_height="58dp"
         android:background="@drawable/rounded_rectangule"
@@ -85,9 +280,9 @@
             android:layout_marginEnd="70dp"
             android:layout_marginRight="70dp"
             android:layout_marginBottom="8dp"
+            android:onClick="Classificacoes"
             app:srcCompat="@drawable/ic_baseline_emoji_events_24_grey"
-            tools:ignore="VectorDrawableCompat"
-            android:onClick="Classificacoes"/>
+            tools:ignore="VectorDrawableCompat" />
 
         <ImageView
             android:id="@+id/imageView5"
@@ -105,9 +300,9 @@
             android:layout_marginEnd="154dp"
             android:layout_marginRight="154dp"
             android:layout_marginBottom="8dp"
+            android:onClick="Home"
             app:srcCompat="@drawable/ic_baseline_home_24_grey"
-            tools:ignore="VectorDrawableCompat"
-            android:onClick="Home"/>
+            tools:ignore="VectorDrawableCompat" />
 
         <ImageView
             android:id="@+id/imageView9"
@@ -136,9 +331,9 @@
             android:layout_marginBottom="9dp"
             android:layout_toStartOf="@+id/imageView6"
             android:layout_toLeftOf="@+id/imageView6"
+            android:onClick="Atividade"
             app:srcCompat="@drawable/ic_baseline_directions_run_24_grey"
-            tools:ignore="VectorDrawableCompat"
-            android:onClick="Atividade"/>
+            tools:ignore="VectorDrawableCompat" />
 
         <ImageView
             android:id="@+id/imageView8"
@@ -152,11 +347,124 @@
             android:layout_marginEnd="-68dp"
             android:layout_marginRight="-68dp"
             android:layout_marginBottom="9dp"
+            android:onClick="Saude"
             app:srcCompat="@drawable/ic_baseline_medical_services_24_grey"
-            tools:ignore="VectorDrawableCompat"
-            android:onClick="Saude"/>
+            tools:ignore="VectorDrawableCompat" />
 
     </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.261"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/ic_baseline_fitness_center_24" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/ic_baseline_restaurant_24" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/Treinador"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/Nutricionista"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.764"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView17" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="373dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="20dp"
+        android:onClick="DiogoAlmeida"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.248" >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/imageView18"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            app:srcCompat="@drawable/ic_baseline_account_circle_24"
+            android:src="@drawable/h2"/>
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/Diogo"
+            android:textColor="#000000"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="@string/Treinador"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="60dp"/>
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="10dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:progressTint="#ffd203"
+            android:rating="4.5" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="4,5"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:layout_marginTop="28dp"
+            android:layout_marginLeft="317dp"/>
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

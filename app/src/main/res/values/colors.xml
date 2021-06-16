@@ -13,5 +13,9 @@
     <color name="cinzento">#fafafa</color>
     <color name="cinzento_escuro">#A9A9A9</color>
     <color name="cinzento_claro">#f9f9f9</color>
-    <color name="vermelho">#FF4600</color>
+    <color name="vermelho_laranja">#FF4600</color>
+    <color name="azul_bebe">#28B5F4</color>
+    <color name="vermelho">#FF0000</color>
+    <color name="cizento">#808080</color>
+    <color name="azul">#489FEF</color>
 </resources>
