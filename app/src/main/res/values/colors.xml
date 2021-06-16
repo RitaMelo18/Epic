@@ -12,4 +12,6 @@
     <color name="colorPrimaryLight">#72e7ff</color>
     <color name="azul_bebe">#28B5F4</color>
     <color name="vermelho">#FF0000</color>
+    <color name="cizento">#808080</color>
+    <color name="azul">#489FEF</color>
 </resources>

@@ -105,4 +105,21 @@
     <string name="history">HISTORY</string>
     <string name="Medirpulsacao">Medir pulsação por minuto</string>
     <string name="Medir">Medir</string>
+    <string name="amigos">AMIGOS</string>
+    <string name="globais">GLOBAIS</string>
+    <string name="tania">Tânia Silva</string>
+    <string name="david">David Verde</string>
+    <string name="joao">João lopes</string>
+    <string name="rita">Rita Melo</string>
+    <string name="glob1">Ruben Gonçalves</string>
+    <string name="glob2">Rebeca Catita</string>
+    <string name="glob3">António Teixeira</string>
+    <string name="glob4">Eduarda Amorim</string>
+    <string name="km_totals">Km totais: 12,8km</string>
+    <string name="passos_totals">Passos totais: 17.792</string>
+    <string name="medalha_epic">Medalhas: EPIC</string>
+    <string name="medalha_dedicado">Medalhas: Atleta dedicado</string>
+    <string name="medalha_bolt">Medalhas: Bolt</string>
+    <string name="medalha_master_epic">Medalhas: Master EPIC</string>
+    <string name="medalha_pokepic">Medalhas: Poképic</string>
 </resources>
