@@ -40,7 +40,6 @@
         <activity
             android:name=".Mapa_atividade"
             android:label="@string/title_activity_mapa_atividade"></activity>
-        <activity android:name=".Conta" />
         <activity android:name=".TreinadorPessoal"></activity>
         <activity android:name=".Servicos" />
         <activity android:name=".Saude" />

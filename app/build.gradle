@@ -9,11 +9,10 @@ android {
 
     defaultConfig {
         applicationId "ipvc.estg.epic"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -37,6 +36,7 @@ android {
 }
 
 dependencies {
+
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.5.0'
@@ -71,6 +71,8 @@ dependencies {
     //Groupie
     implementation "com.xwray:groupie:2.8.0"
     implementation "com.xwray:groupie-kotlin-android-extensions:2.8.0"
+
+    //Erro
 
 
 }
